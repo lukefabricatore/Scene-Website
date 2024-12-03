@@ -1,50 +1,118 @@
 * {
-  padding: 0;
-  margin: 0;
-  font-family: Rubik;
+	padding: 0;
+	margin: 0;
+	font-family: Rubik;
+	transition: all 0.15s ease;
 }
 
 body {
-  max-width: 450px;
-  min-width: 300px;
-  padding: 0 24px;
-  margin: 0 auto;
-  margin-top: 120px;
+	max-width: 450px;
+	min-width: 300px;
+	padding: 0 24px;
+	margin: 0 auto;
+	margin-top: 120px;
 }
 
 h1 {
-  font-family: Anybody;
-  font-size: 54px;
-  padding-bottom: 16px;
-  display: inline-block;
-  font-weight: 900;
+	font-family: Anybody;
+	font-size: 54px;
+	padding-bottom: 16px;
+	display: inline-block;
+	font-weight: 900;
 }
 
 h2 {
-  font-family: Anybody;
-  padding-bottom: 4px;
-  font-size: 34px;
-  display: inline-block;
-  font-weight: 400;
+	font-family: Anybody;
+	padding-bottom: 4px;
+	font-size: 34px;
+	display: inline-block;
+	font-weight: 400;
 }
 
 h3 {
-  padding-bottom: 4px;
+	padding-bottom: 4px;
 }
 
-.body_copy {
-  margin-bottom: 24px;
+p {
+	margin-bottom: 24px;
 }
 
 section {
-  padding: 0 0 32px 0;
-  margin: 0;
-  /* background-color: lightblue; */
+	padding: 0 0 32px 0;
+	margin: 0;
+	/* background-color: lightblue; */
 }
 
 hr {
-  margin-bottom: 16px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #ff9d00;
+	margin-bottom: 16px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ff9d00;
+}
+
+.bnw {
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+}
+
+.square {
+	/* max-width: 100%; */
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(150px, 1fr)
+	); /* Responsive grid */
+	gap: 8px;
+}
+
+.card {
+	position: relative; /* Establish a positioning context for the overlay */
+}
+
+.headshot {
+	width: 100%;
+	aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+	object-fit: cover; /* Ensure image covers the container without distortion */
+	display: block;
+	filter: grayscale() brightness(95%) contrast(105%);
+}
+
+.overlay_text {
+	position: absolute; /* Position text over the image */
+	top: 90%; /* Center vertically */
+	left: 50%; /* Center horizontally */
+	transform: translate(-50%, -50%);
+	color: white; /* Ensure text is visible on the image */
+	font-size: 16px; /* Adjust font size */
+	text-align: center; /* Center text alignment */
+	white-space: nowrap;
+	opacity: 100;
+}
+
+.personal_statement {
+	position: absolute; /* Position text over the image */
+	top: 50%; /* Center vertically */
+	left: 50%; /* Center horizontally */
+	white-space: wrap;
+	margin: 0 -10%;
+	transform: translate(-30%, -30%);
+	color: white; /* Ensure text is visible on the image */
+	font-size: 16px; /* Adjust font size */
+	text-align: center; /* Center text alignment */
+	opacity: 0;
+}
+
+.card:hover > .personal_statement {
+	opacity: 100;
+}
+
+.card:hover > .overlay_text {
+	opacity: 0;
+}
+
+.grid > *:hover {
+	transform: scale(1.02);
 }
