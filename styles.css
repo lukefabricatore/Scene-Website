@@ -23,14 +23,14 @@ body {
 
 h1 {
 	font-family: "Instrument Serif";
-	font-size: 54px;
+	font-size: 72px;
 	display: inline-block;
 }
 
 h2 {
 	font-family: "Instrument Serif";
 	padding-bottom: 4px;
-	font-size: 34px;
+	font-size: 46px;
 	display: inline-block;
 }
 
@@ -153,7 +153,7 @@ hr:has(.section) {
 
 .project_card:hover > h3 {
 	color: #ff9d00;
-	text-decoration-color: #ff9d00;
+	text-shadow: 0 0 2px #ff9d00;
 	text-shadow: 0 0 4px #ff9d00;
 	text-shadow: 0 0 15px #ff9d00;
 }
