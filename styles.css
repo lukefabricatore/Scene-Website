@@ -1,11 +1,19 @@
 * {
 	padding: 0;
 	margin: 0;
-	font-family: Rubik;
+	font-family: "Space Grotesk";
 	transition: all 0.15s ease;
+	font-weight: 500;
+}
+
+::selection {
+	color: #ff9d00;
+	text-shadow: 0 0 15px #ff9d00b6;
 }
 
 body {
+	overflow: visible;
+
 	max-width: 450px;
 	min-width: 300px;
 	padding: 0 24px;
@@ -14,40 +22,47 @@ body {
 }
 
 h1 {
-	font-family: Anybody;
+	font-family: "Instrument Serif";
 	font-size: 54px;
-	padding-bottom: 16px;
 	display: inline-block;
-	font-weight: 900;
 }
 
 h2 {
-	font-family: Anybody;
+	font-family: "Instrument Serif";
 	padding-bottom: 4px;
 	font-size: 34px;
 	display: inline-block;
-	font-weight: 400;
 }
 
 h3 {
+	font-size: 22px;
 	padding-bottom: 4px;
+	font-weight: 700;
 }
 
 p {
 	margin-bottom: 24px;
 }
 
+a {
+	color: #000000;
+}
+
 section {
-	padding: 0 0 32px 0;
+	padding: 0 0 128px 0;
 	margin: 0;
 	/* background-color: lightblue; */
 }
 
 hr {
-	margin-bottom: 16px;
+	margin: 8px 0;
 	border-width: 1px;
 	border-style: solid;
 	border-color: #ff9d00;
+}
+
+hr:has(.section) {
+	margin-bottom: 16px;
 }
 
 .bnw {
@@ -59,17 +74,24 @@ hr {
 	/* max-width: 100%; */
 }
 
-.grid {
+.headshot_grid {
 	display: grid;
-	grid-template-columns: repeat(
-		auto-fill,
-		minmax(150px, 1fr)
-	); /* Responsive grid */
+	grid-template-columns: 1fr 1fr;
 	gap: 8px;
 }
 
 .card {
+	background-color: #00000027;
 	position: relative; /* Establish a positioning context for the overlay */
+}
+
+.card > img {
+	margin: auto 0;
+}
+
+.card:hover > .headshot {
+	filter: brightness(0.7) grayscale() brightness(95%) contrast(105%);
+	background-color: #00000090;
 }
 
 .headshot {
@@ -77,7 +99,6 @@ hr {
 	aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
 	object-fit: cover; /* Ensure image covers the container without distortion */
 	display: block;
-	filter: grayscale() brightness(95%) contrast(105%);
 }
 
 .overlay_text {
@@ -90,6 +111,7 @@ hr {
 	text-align: center; /* Center text alignment */
 	white-space: nowrap;
 	opacity: 100;
+	filter: drop-shadow(0px 0px 10px #000000);
 }
 
 .personal_statement {
@@ -97,8 +119,8 @@ hr {
 	top: 50%; /* Center vertically */
 	left: 50%; /* Center horizontally */
 	white-space: wrap;
-	margin: 0 -10%;
-	transform: translate(-30%, -30%);
+	margin: 0 -20%;
+	transform: translate(-27%, -27%);
 	color: white; /* Ensure text is visible on the image */
 	font-size: 16px; /* Adjust font size */
 	text-align: center; /* Center text alignment */
@@ -115,4 +137,28 @@ hr {
 
 .grid > *:hover {
 	transform: scale(1.02);
+}
+
+.project_card {
+	padding: 8px 0;
+}
+
+.project_card > h3 {
+	font-weight: 500;
+}
+
+.project_card:hover {
+	padding: 8px 8px;
+}
+
+.project_card:hover > h3 {
+	color: #ff9d00;
+	text-decoration-color: #ff9d00;
+	text-shadow: 0 0 4px #ff9d00;
+	text-shadow: 0 0 15px #ff9d00;
+}
+
+.project_card_grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }
