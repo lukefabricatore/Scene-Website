@@ -12,8 +12,6 @@
 }
 
 body {
-	overflow: visible;
-
 	max-width: 450px;
 	min-width: 300px;
 	padding: 0 24px;
@@ -46,6 +44,7 @@ p {
 
 a {
 	color: #000000;
+	cursor: pointer;
 }
 
 section {
@@ -83,6 +82,12 @@ hr:has(.section) {
 .card {
 	background-color: #00000027;
 	position: relative; /* Establish a positioning context for the overlay */
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.card:hover {
+	border-radius: 8px;
 }
 
 .card > img {
@@ -116,11 +121,11 @@ hr:has(.section) {
 
 .personal_statement {
 	position: absolute; /* Position text over the image */
-	top: 50%; /* Center vertically */
-	left: 50%; /* Center horizontally */
 	white-space: wrap;
-	margin: 0 -20%;
-	transform: translate(-27%, -27%);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
 	color: white; /* Ensure text is visible on the image */
 	font-size: 16px; /* Adjust font size */
 	text-align: center; /* Center text alignment */
@@ -135,23 +140,33 @@ hr:has(.section) {
 	opacity: 0;
 }
 
-.grid > *:hover {
+.headshot_grid > *:hover {
 	transform: scale(1.02);
 }
 
+.projects a {
+	text-decoration: none;
+}
+
 .project_card {
-	padding: 8px 0;
+	padding: 8px 8px;
+	background-color: hsla(0, 0%, 0%, 0.05);
+	margin: 0 0 8px 0;
+	border-radius: 4px;
+	max-height: 170px;
+	overflow: hidden;
+}
+
+.project_card:hover {
+	max-height: 200px;
 }
 
 .project_card > h3 {
 	font-weight: 500;
 }
 
-.project_card:hover {
-	padding: 8px 8px;
-}
-
 .project_card:hover > h3 {
+	padding-left: 8px;
 	color: #ff9d00;
 	text-shadow: 0 0 2px #ff9d00;
 	text-shadow: 0 0 4px #ff9d00;
@@ -160,5 +175,13 @@ hr:has(.section) {
 
 .project_card_grid {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-auto-flow: column;
+	grid-auto-rows: 200px; /* Set the row height to 400px */
+	gap: 4px;
+}
+
+.project_card_grid > video {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
 }
