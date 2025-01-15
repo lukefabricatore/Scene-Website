@@ -149,12 +149,16 @@ hr:has(.section) {
 }
 
 .project_card {
+	width: 100%;
 	padding: 8px 8px;
 	background-color: hsla(0, 0%, 0%, 0.05);
 	margin: 0 0 8px 0;
 	border-radius: 4px;
 	max-height: 170px;
 	overflow: hidden;
+	border: none;
+	text-align: left;
+	cursor: pointer;
 }
 
 .project_card:hover {
@@ -184,4 +188,66 @@ hr:has(.section) {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+}
+
+
+
+
+/* MODAL */
+
+
+#project_modal {
+	position: fixed;
+	top: 10svh;
+	max-width: 498px;
+	min-width: 300px;
+	height: 80svh;
+	margin: 0 -24px;
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0 2px 30px #00000050;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 2;
+}
+#project_modal[active] {
+	opacity: 1;
+	pointer-events: auto;
+}
+#project_modal img, #project_modal video {
+	width: 100%;
+}
+#modal_close {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ffffffdb;
+	z-index: 1;
+	opacity: 0;
+	pointer-events: none;
+	backdrop-filter: blur(8px);
+}
+#modal_close[active] {
+	opacity: 1;
+	pointer-events: auto;
+}
+body:has(> #project_modal[active]) { 
+	overflow: hidden;
+}
+#project_modal div.content {
+	overflow: scroll;
+	height: 80svh;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 24px 24px;
+}
+#project_modal .exit_button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	z-index: 1;
 }
