@@ -12,11 +12,16 @@
 }
 
 body {
+	width: 450px;
 	max-width: 450px;
 	min-width: 300px;
 	padding: 0 24px;
 	margin: 0 auto;
 	margin-top: 120px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 h1 {
@@ -150,62 +155,53 @@ hr:has(.section) {
 
 .project_card {
 	width: 100%;
-	padding: 8px 8px;
+	padding: 14px 16px 10px 16px;
 	background-color: hsla(0, 0%, 0%, 0.05);
-	margin: 0 0 8px 0;
-	border-radius: 4px;
-	max-height: 170px;
+	margin: 0 0 16px 0;
+	border-radius: 8px;
+	height: 450px;
 	overflow: hidden;
 	border: none;
 	text-align: left;
 	cursor: pointer;
+
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
 }
 
 .project_card:hover {
-	max-height: 200px;
+	transform: scale(103%);
 }
 
 .project_card > h3 {
 	font-weight: 500;
 }
 
-.project_card:hover > h3 {
-	padding-left: 8px;
-	color: #ff9d00;
-	text-shadow: 0 0 2px #ff9d00;
-	text-shadow: 0 0 4px #ff9d00;
-	text-shadow: 0 0 15px #ff9d00;
+.project_card:hover > * {
 }
 
 .project_card_grid {
-	display: grid;
-	grid-auto-flow: column;
-	grid-auto-rows: 200px; /* Set the row height to 400px */
-	gap: 4px;
-}
-
-.project_card_grid > video {
-	height: 100%;
+	height: 90%;
 	width: 100%;
-	object-fit: cover;
 }
 
-
-
+.project_card_grid > * {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 4px;
+}
 
 /* MODAL */
-
 
 #project_modal {
 	position: fixed;
 	top: 10svh;
-	max-width: 498px;
-	min-width: 300px;
-	height: 80svh;
-	margin: 0 -24px;
+	width: 100%;
 	background: white;
 	border-radius: 5px;
-	box-shadow: 0 2px 30px #00000050;
+	box-shadow: 0 2px 60px #00000030;
 	opacity: 0;
 	pointer-events: none;
 	z-index: 2;
@@ -214,7 +210,8 @@ hr:has(.section) {
 	opacity: 1;
 	pointer-events: auto;
 }
-#project_modal img, #project_modal video {
+#project_modal img,
+#project_modal video {
 	width: 100%;
 }
 #modal_close {
@@ -223,17 +220,17 @@ hr:has(.section) {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #ffffffdb;
+	background: #00000020;
 	z-index: 1;
 	opacity: 0;
 	pointer-events: none;
-	backdrop-filter: blur(8px);
+	backdrop-filter: blur(32px);
 }
 #modal_close[active] {
 	opacity: 1;
 	pointer-events: auto;
 }
-body:has(> #project_modal[active]) { 
+body:has(> #project_modal[active]) {
 	overflow: hidden;
 }
 #project_modal div.content {
