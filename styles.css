@@ -9,6 +9,7 @@
 ::selection {
 	color: #ff9d00;
 	text-shadow: 0 0 15px #ff9d00b6;
+	background-color: #ff9d0015;
 }
 
 body {
@@ -93,6 +94,7 @@ hr:has(.section) {
 
 .card:hover {
 	border-radius: 8px;
+	cursor: default;
 }
 
 .card > img {
@@ -198,7 +200,10 @@ hr:has(.section) {
 #project_modal {
 	position: fixed;
 	top: 10svh;
-	width: 100%;
+	left: 5%;
+	width: 90%;
+	padding: 0 24px;
+	box-sizing: border-box;
 	background: white;
 	border-radius: 5px;
 	box-shadow: 0 2px 60px #00000030;
@@ -206,6 +211,14 @@ hr:has(.section) {
 	pointer-events: none;
 	z-index: 2;
 }
+
+@media only screen and (min-width: 1000px) {
+	#project_modal {
+		max-width: 900px;
+		left: calc(50% - 450px);
+	}
+}
+
 #project_modal[active] {
 	opacity: 1;
 	pointer-events: auto;
