@@ -1,195 +1,195 @@
 * {
-	padding: 0;
-	margin: 0;
-	font-family: "Space Grotesk";
-	transition: all 0.15s ease;
-	font-weight: 500;
+  padding: 0;
+  margin: 0;
+  font-family: "Space Grotesk";
+  transition: all 0.15s ease;
+  font-weight: 500;
 }
 
 ::selection {
-	color: #ff9d00;
-	text-shadow: 0 0 15px #ff9d00b6;
-	background-color: #ff9d0015;
+  color: #ff9d00;
+  text-shadow: 0 0 15px #ff9d00b6;
+  background-color: #ff9d0015;
 }
 
 body {
-	width: 450px;
-	max-width: 450px;
-	min-width: 300px;
-	padding: 0 24px;
-	margin: 0 auto;
-	margin-top: 120px;
+  width: 450px;
+  max-width: 450px;
+  min-width: 300px;
+  padding: 0 24px;
+  margin: 0 auto;
+  margin-top: 120px;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h1 {
-	font-family: "Instrument Serif";
-	font-size: 72px;
-	display: inline-block;
+  font-family: "Instrument Serif";
+  font-size: 72px;
+  display: inline-block;
 }
 
 h2 {
-	font-family: "Instrument Serif";
-	padding-bottom: 4px;
-	font-size: 46px;
-	display: inline-block;
+  font-family: "Instrument Serif";
+  padding-bottom: 4px;
+  font-size: 46px;
+  display: inline-block;
 }
 
 h3 {
-	font-size: 22px;
-	padding-bottom: 4px;
-	font-weight: 700;
+  font-size: 22px;
+  padding-bottom: 4px;
+  font-weight: 700;
 }
 
 p {
-	margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 caption {
-	opacity: 50%;
+  opacity: 50%;
 }
 
 a {
-	color: #000000;
-	cursor: pointer;
+  color: #000000;
+  cursor: pointer;
 }
 
 section {
-	padding: 0 0 128px 0;
-	margin: 0;
-	/* background-color: lightblue; */
+  padding: 0 0 128px 0;
+  margin: 0;
+  /* background-color: lightblue; */
 }
 
 hr {
-	margin: 8px 0;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #ff9d00;
+  margin: 8px 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ff9d00;
 }
 
 hr:has(.section) {
-	margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .bnw {
-	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-	filter: grayscale(100%);
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
 .square {
-	/* max-width: 100%; */
+  /* max-width: 100%; */
 }
 
 .headshot_grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 
 .card {
-	background-color: #00000027;
-	position: relative; /* Establish a positioning context for the overlay */
-	border-radius: 4px;
-	overflow: hidden;
+  background-color: #00000027;
+  position: relative; /* Establish a positioning context for the overlay */
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .card:hover {
-	border-radius: 8px;
-	cursor: default;
+  border-radius: 8px;
+  cursor: default;
 }
 
 .card > img {
-	margin: auto 0;
+  margin: auto 0;
 }
 
 .card:hover > .headshot {
-	filter: brightness(0.7) grayscale() brightness(95%) contrast(105%);
-	background-color: #00000090;
+  filter: brightness(0.7) grayscale() brightness(95%) contrast(105%);
+  background-color: #00000090;
 }
 
 .headshot {
-	width: 100%;
-	aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
-	object-fit: cover; /* Ensure image covers the container without distortion */
-	display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+  object-fit: cover; /* Ensure image covers the container without distortion */
+  display: block;
 }
 
 .overlay_text {
-	position: absolute; /* Position text over the image */
-	top: 90%; /* Center vertically */
-	left: 50%; /* Center horizontally */
-	transform: translate(-50%, -50%);
-	color: white; /* Ensure text is visible on the image */
-	font-size: 16px; /* Adjust font size */
-	text-align: center; /* Center text alignment */
-	white-space: nowrap;
-	opacity: 100;
-	filter: drop-shadow(0px 0px 10px #000000);
+  position: absolute; /* Position text over the image */
+  top: 90%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+  color: white; /* Ensure text is visible on the image */
+  font-size: 16px; /* Adjust font size */
+  text-align: center; /* Center text alignment */
+  white-space: nowrap;
+  opacity: 100;
+  filter: drop-shadow(0px 0px 10px #000000);
 }
 
 .personal_statement {
-	position: absolute; /* Position text over the image */
-	white-space: wrap;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 80%;
-	color: white; /* Ensure text is visible on the image */
-	font-size: 16px; /* Adjust font size */
-	text-align: center; /* Center text alignment */
-	opacity: 0;
+  position: absolute; /* Position text over the image */
+  white-space: wrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: white; /* Ensure text is visible on the image */
+  font-size: 16px; /* Adjust font size */
+  text-align: center; /* Center text alignment */
+  opacity: 0;
 }
 
 .card:hover > .personal_statement {
-	opacity: 100;
+  opacity: 100;
 }
 
 .card:hover > .overlay_text {
-	opacity: 0;
+  opacity: 0;
 }
 
 .headshot_grid > *:hover {
-	transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .projects a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .project_card {
-	width: 100%;
-	padding: 14px 16px 10px 16px;
-	background-color: hsla(0, 0%, 0%, 0.05);
-	margin: 0 0 16px 0;
-	border-radius: 12px;
-	height: 450px;
-	overflow: hidden;
-	border: none;
-	text-align: left;
-	cursor: pointer;
+  width: 100%;
+  padding: 14px 16px 10px 16px;
+  background-color: hsla(0, 0%, 0%, 0.05);
+  margin: 0 0 16px 0;
+  border-radius: 12px;
+  height: 450px;
+  overflow: hidden;
+  border: none;
+  text-align: left;
+  cursor: pointer;
 
-	display: flex;
-	flex-direction: column;
-	gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .project_card:hover {
-	transform: scale(103%);
+  transform: scale(103%);
 }
 
 .project_card > h3 {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 .project_card > video,
 image {
-	width: 100%;
-	height: 90%;
-	object-fit: cover;
-	border-radius: 4px;
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .project_card:hover > * {
@@ -198,101 +198,107 @@ image {
 /* MODAL */
 
 #project_modal {
-	position: fixed;
-	top: 10svh;
-	height: 80svh;
-	left: 5%;
-	width: 90%;
-	box-sizing: border-box;
-	background: white;
-	border-radius: 46px;
-	box-shadow: 0 2px 60px #00000030;
-	opacity: 0;
-	pointer-events: none;
-	z-index: 2;
-	padding: 36px 36px;
+  position: fixed;
+  top: 5svh;
+  height: 90svh;
+  left: 5%;
+  width: 90%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255);
+  border-radius: 46px;
+  box-shadow: 0 2px 60px #00000030;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  padding: 36px 36px;
 
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 @media only screen and (min-width: 1000px) {
-	#project_modal {
-		max-width: 900px;
-		left: calc(50% - 450px);
-	}
+  #project_modal {
+    max-width: 900px;
+    left: calc(50% - 450px);
+  }
 }
 
 #project_modal[active] {
-	opacity: 1;
-	pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #project_modal img,
 #project_modal video {
-	width: 100%;
-	border-radius: 10px;
-	background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-#project_modal caption {
-	width: 100%;
+#project_modal img {
+  max-height: 80svh;
 }
 
 #project_modal video {
-	max-height: 50svh;
+  max-height: 50svh;
 }
+
+#project_modal caption {
+  width: 100%;
+}
+
 #modal_close {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #00000020;
-	z-index: 1;
-	opacity: 0;
-	pointer-events: none;
-	backdrop-filter: blur(64px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000020;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(32px);
 }
 
 #modal_close[active] {
-	opacity: 1;
-	pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 body:has(> #project_modal[active]) {
-	overflow: hidden;
+  overflow: hidden;
 }
 #project_modal div.content {
-	overflow: scroll;
-	height: 100%;
-	width: 100%;
-	box-sizing: border-box;
-	border-radius: 10px;
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 #project_modal div.content::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 #project_modal .exit_button {
-	all: unset; /* Resets all inherited styles */
-	background-color: rgba(255, 255, 255, 0.1);
-	color: white;
-	backdrop-filter: blur(20px);
-	mix-blend-mode: difference;
-	border-radius: 10px;
-	cursor: pointer;
+  all: unset; /* Resets all inherited styles */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(156, 156, 156);
+  backdrop-filter: blur(20px);
+  mix-blend-mode: difference;
+  border-radius: 10px;
+  cursor: pointer;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 50px;
-	height: 50px;
-	z-index: 1;
-	margin: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 30px;
+  z-index: 1;
+  margin: 36px;
 }
