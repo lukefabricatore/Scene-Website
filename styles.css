@@ -201,7 +201,7 @@ image {
   position: fixed;
   top: 5svh;
   height: 90svh;
-  left: 5%;
+  left: 50px;
   width: 90%;
   box-sizing: border-box;
   background: rgba(255, 255, 255);
@@ -234,14 +234,14 @@ image {
   object-fit: contain;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
 }
 
 #project_modal img {
-  max-height: 80svh;
 }
 
 #project_modal video {
-  max-height: 50svh;
+  max-height: 80svh;
 }
 
 #project_modal caption {
