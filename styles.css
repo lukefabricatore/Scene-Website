@@ -13,9 +13,8 @@
 }
 
 body {
-	width: 450px;
+	width: 100%;
 	max-width: 450px;
-	min-width: 300px;
 	padding: 0 24px;
 	margin: 0 auto;
 	margin-top: 120px;
@@ -50,7 +49,7 @@ p {
 	margin-bottom: 24px;
 }
 
-caption {
+.desc {
 	opacity: 50%;
 }
 
@@ -203,8 +202,8 @@ hr:has(.section) {
 	position: fixed;
 	top: 5svh;
 	height: 90svh;
-	left: 50px;
-	width: 90%;
+	left: 2%;
+	width: 96%;
 	box-sizing: border-box;
 	background: rgba(255, 255, 255);
 	border-radius: 46px;
@@ -212,7 +211,7 @@ hr:has(.section) {
 	opacity: 0;
 	pointer-events: none;
 	z-index: 2;
-	padding: 36px 36px;
+	padding: 24px 24px;
 
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
@@ -222,6 +221,7 @@ hr:has(.section) {
 	#project_modal {
 		max-width: 900px;
 		left: calc(50% - 450px);
+		padding: 36px 36px;
 	}
 }
 
@@ -232,11 +232,9 @@ hr:has(.section) {
 
 #project_modal img,
 #project_modal video {
-	width: 100%;
-	object-fit: contain;
-	border-radius: 10px;
+	max-width: 100%;
+	border-radius: 4px;
 	background-color: rgba(0, 0, 0, 0.1);
-	margin-bottom: 16px;
 }
 
 #project_modal img {
@@ -245,6 +243,17 @@ hr:has(.section) {
 
 #project_modal video {
 	max-height: 80svh;
+}
+
+.video_container {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 16px;
+	overflow: hidden;
 }
 
 #project_modal caption {
@@ -277,6 +286,7 @@ body:has(> #project_modal[active]) {
 	width: 100%;
 	box-sizing: border-box;
 	border-radius: 10px;
+
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 }
