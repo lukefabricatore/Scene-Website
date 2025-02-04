@@ -156,12 +156,25 @@ hr:has(.section) {
 	transform: scale(1.02);
 }
 
+.projects {
+	align-self: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 450px);
+	column-gap: 16px;
+	justify-items: center;
+	justify-content: center;
+
+	width: calc(100vw - 320px);
+	max-width: 1500px;
+	min-width: 100%;
+}
+
 .projects a {
 	text-decoration: none;
 }
 
 .project_card {
-	width: 100%;
+	width: 450px;
 	padding: 14px 16px 10px 16px;
 	background-color: hsla(0, 0%, 0%, 0.05);
 	margin: 0 0 16px 0;
@@ -196,7 +209,7 @@ hr:has(.section) {
 .project_card:hover > * {
 }
 
-/* MODAL */
+/******* MODAL *******/
 
 #project_modal {
 	position: fixed;
@@ -230,6 +243,10 @@ hr:has(.section) {
 	pointer-events: auto;
 }
 
+#project_modal h1 {
+	max-width: 80%;
+}
+
 #project_modal img,
 #project_modal video {
 	max-width: 100%;
@@ -239,6 +256,7 @@ hr:has(.section) {
 
 #project_modal img {
 	width: 100%;
+	margin-bottom: 4px;
 }
 
 #project_modal video {
@@ -297,12 +315,17 @@ body:has(> #project_modal[active]) {
 
 #project_modal .exit_button {
 	all: unset; /* Resets all inherited styles */
-	background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.15);
 	color: rgb(156, 156, 156);
-	backdrop-filter: blur(20px);
+	backdrop-filter: blur(15px);
 	mix-blend-mode: difference;
 	border-radius: 10px;
 	cursor: pointer;
+
+	filter: drop-shadow(0px 0px 10px #000000);
+	filter: drop-shadow(0px 0px 7px #0000009b);
+
+	backdrop-filter: brightness(1.35);
 
 	display: flex;
 	justify-content: center;
@@ -311,7 +334,14 @@ body:has(> #project_modal[active]) {
 	top: 0;
 	right: 0;
 	width: 50px;
-	height: 30px;
+	height: 50px;
 	z-index: 1;
 	margin: 36px;
+
+	transition: all 0.15s ease;
+}
+
+#project_modal .exit_button:hover {
+	backdrop-filter: brightness(1.4);
+	transform: scale(1.1);
 }

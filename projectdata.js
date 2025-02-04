@@ -53,4 +53,53 @@ const data = {
 		{ type: "video", src: "main.mp4" },
 		{ type: "video", src: "Jurassic World Thumper.mp4" },
 	],
+
+	paxahauMetrotimes: [
+		{ type: "h1", content: "Paxahau Metro Times Cover" },
+		{
+			type: "p",
+			content:
+				"Scene was approached by Paxahau to create a cover for Movement, an electronic music festival in the heart of Detroit city. The cover was featured in Metro Times, a local Detroit publication.",
+		},
+		{ type: "videoauto", src: "Movment Metro Times Final Compressed.mp4" },
+		{ type: "img", src: "Mouvement MetroTimes Update 2.webp" },
+		{ type: "img", src: "MetroTimesCoverMockup.webp" },
+	],
+
+	reimagineLifeFoundation: [
+		{ type: "h1", content: "Reimagine Life Foundation" },
+		{
+			type: "p",
+			content:
+				"Scene had the opportunity to work with the Reimagine Life Foundation to create a new logo and brand identity. The foundation is a non-profit organization that helps people who have had life-altering disabilities.",
+		},
+		{ type: "img", src: "ReimagineLife_BrandGuidelines4_1.webp" },
+		{ type: "img", src: "ReimagineLife_BrandGuidelines_3.webp" },
+		{ type: "img", src: "ReimagineLife_BrandGuidelines_2.webp" },
+	],
+
+	nothing3DBrand: [
+		{ type: "h1", content: "Nothing Rebrand" },
+		{ type: "p", content: "Scene member Luke created a Brand Story video for Nothing, a tech company rooted in going against the grain. Hypothetical work." },
+		{ type: "video", src: "brandvideo.mp4" },
+		{ type: "img", src: "nothing2.webp" },
+		{ type: "img", src: "nothing3.webp" },
+		{ type: "img", src: "nothing9.webp" },
+		{ type: "videoauto", src: "Nothing 12.mp4" },
+	],
+
+	mechKeeb: [
+		{ type: "h1", content: "Mechanical Keyboard Story Brand" },
+		{
+			type: "p",
+			content:
+				"Scene member Julian created a 3D brand story for a the mechanical keyboard online community. The video highlights the community's passion for mechanical keyboards and the culture that surrounds it.",
+		},
+		{ type: "video", src: "keeb_final.mp4" },
+		{ type: "img", src: "6.webp" },
+		{ type: "img", src: "7.webp" },
+		{ type: "img", src: "8.webp" },
+		{ type: "img", src: "9.webp" },
+		{ type: "img", src: "11.webp" },
+	],
 };

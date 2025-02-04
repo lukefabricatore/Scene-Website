@@ -46,6 +46,23 @@ function createModal(event) {
 			vid.controls = true;
 			vid.loop = true;
 			element.appendChild(vid);
+		} else if (item.type === "video") {
+			element = document.createElement("div");
+			element.classList.add("video_container");
+			let vid = document.createElement("video");
+			vid.src = `projects/${id}/${item.src}`;
+			vid.controls = true;
+			vid.loop = true;
+			element.appendChild(vid);
+		} else if (item.type === "videoauto") {
+			element = document.createElement("div");
+			element.classList.add("video_container");
+			let vid = document.createElement("video");
+			vid.src = `projects/${id}/${item.src}`;
+			vid.autoplay = true;
+			vid.muted = true;
+			vid.loop = true;
+			element.appendChild(vid);
 		}
 		containerInner.appendChild(element);
 	}
