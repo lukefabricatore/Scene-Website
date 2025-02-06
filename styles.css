@@ -13,8 +13,9 @@
 }
 
 body {
+	box-sizing: border-box;
 	width: 100%;
-	max-width: 450px;
+	max-width: 498px;
 	padding: 0 24px;
 	margin: 0 auto;
 	margin-top: 120px;
@@ -65,7 +66,7 @@ section {
 }
 
 hr {
-	margin: 0px 0 16px 0;
+	margin: 8px 0;
 	border-width: 1px;
 	border-style: solid;
 	border-color: #ff9d00;
@@ -164,9 +165,16 @@ hr:has(.section) {
 	justify-items: center;
 	justify-content: center;
 
-	width: calc(100vw - 320px);
+	width: calc(100vw - 650px);
 	max-width: 1500px;
 	min-width: 100%;
+}
+
+@media (max-width: 498px) {
+	.projects {
+		grid-template-columns: 1fr;
+		max-width: 450px;
+	}
 }
 
 .projects a {
@@ -174,7 +182,8 @@ hr:has(.section) {
 }
 
 .project_card {
-	width: 450px;
+	width: 100%;
+	max-width: 450px;
 	padding: 14px 16px 10px 16px;
 	background-color: hsla(0, 0%, 0%, 0.05);
 	margin: 0 0 16px 0;
@@ -339,12 +348,11 @@ body:has(> #project_modal[active]) {
 	backdrop-filter: blur(15px);
 	mix-blend-mode: difference;
 	border-radius: 10px;
-	cursor: pointer;
 
 	filter: drop-shadow(0px 0px 10px #000000);
 	filter: drop-shadow(0px 0px 7px #0000009b);
 
-	backdrop-filter: brightness(1.35);
+	/* backdrop-filter: brightness(1.35); */
 
 	display: flex;
 	justify-content: center;
@@ -361,6 +369,7 @@ body:has(> #project_modal[active]) {
 }
 
 #project_modal .exit_button:hover {
-	backdrop-filter: brightness(1.4);
+	/* backdrop-filter: brightness(1.4); */
 	transform: scale(1.1);
+	cursor: pointer;
 }
