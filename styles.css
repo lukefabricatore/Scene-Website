@@ -65,7 +65,7 @@ section {
 }
 
 hr {
-	margin: 8px 0;
+	margin: 0px 0 16px 0;
 	border-width: 1px;
 	border-style: solid;
 	border-color: #ff9d00;
@@ -207,6 +207,25 @@ hr:has(.section) {
 }
 
 .project_card:hover > * {
+}
+
+.two_column {
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 16px;
+	row-gap: 8px;
+}
+
+.two_column > li {
+	padding: 8px 0;
+	border-bottom: 1px solid #00000020;
+	cursor: auto;
+}
+
+.two_column > li:hover {
+	color: #ff9d00;
+	text-shadow: 0 0 15px #ff9d00b6;
 }
 
 /******* MODAL *******/
