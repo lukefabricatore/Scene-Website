@@ -54,7 +54,7 @@ const data = {
 		{ type: "videoauto", src: "JurassicWorldThumper.mp4" },
 	],
 
-	paxahauMetrotimes: [
+	paxahauMetroTimes: [
 		{ type: "h1", content: "Paxahau Metro Times Cover" },
 		{
 			type: "p",
