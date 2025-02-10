@@ -6,6 +6,7 @@
 	font-weight: 500;
 	line-height: 1em;
 	letter-spacing: 0.01em;
+	
 }
 img {
 	pointer-events: none;
@@ -17,16 +18,33 @@ img {
 	background-color: #ff9d0015;
 }
 
+/* Disable blue highlight on button click */
+button {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+	overflow-x: hidden;
+}
 body {
 	box-sizing: border-box;
 	width: 100%;
 	max-width: 474px;
 	padding: 0 12px;
 	margin: 120px auto;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+@media only screen and (max-width: 474px) {
+	body {
+		overflow-x: hidden;
+	}
 }
 
 h1 {
@@ -241,6 +259,7 @@ hr:has(.section) {
 	opacity: 100;
 	filter: drop-shadow(0px 0px 10px #000000);
 	transition: opacity 0.2s;
+	pointer-events: none;
 }
 
 .personal_statement {
@@ -255,6 +274,7 @@ hr:has(.section) {
 	text-align: center; /* Center text alignment */
 	opacity: 0;
 	transition: opacity 0.2s;
+	pointer-events: none;
 }
 
 .card:hover > .personal_statement {
@@ -267,46 +287,6 @@ hr:has(.section) {
 
 .headshot_grid > *:hover {
 	transform: scale(1.02);
-}
-
-
-
-
-.project_card {
-	width: 100%;
-	max-width: 450px;
-	/* padding: 14px 16px 10px 16px; */
-	background-color: hsla(0, 0%, 0%, 0);
-	height: 450px;
-	overflow: hidden;
-	border: none;
-	text-align: left;
-	cursor: pointer;
-
-	display: flex;
-	flex-direction: column;
-	gap: 6px;
-}
-
-button.project_card {
-	background-color: 00000000;
-}
-
-.project_card > video,
-.project_card > img {
-	width: 100%;
-	height: 90%;
-	object-fit: cover;
-	border-radius: 4px;
-}
-
-.project_card h4 {
-	flex-shrink: 0; /* Prevent h4 from shrinking */
-}
-
-.project_card:hover > img,
-video {
-	transform: scale(0.985);
 }
 
 
@@ -350,6 +330,7 @@ ul.client_list li {
 	align-items: center;
 	column-gap: 10px;
 	justify-content: left;
+	line-height: 1.2em;
 }
 ul.client_list li p {
 	margin: 0;
@@ -383,14 +364,17 @@ section.projects {
 	margin-top: 64px;
 }
 .projects_container .project {
-	width: 225px;
-	height: 225px;
+	width: 50%;
+	max-width: 225px;
+	height: auto;
+	aspect-ratio: 1 / 1;
 	position: relative;
 	cursor: pointer;
 	background: none;
 	border: none;
 	margin: 0;
 }
+
 .project .action_popout {
 	box-sizing: border-box;
 	position: absolute;
@@ -451,6 +435,13 @@ section.projects {
 	transition: margin 0.2s, transform 0.2s;
 }
 
+@media only screen and (max-width: 380px) {
+	.projects_container .project {
+		width: 100%;
+		max-width: unset;
+	}
+}
+
 @media (hover:hover) {
 	.projects_container .project:hover .action_popout {
 		border-color: #FF9D00;
@@ -473,6 +464,11 @@ section.projects {
 	.project:hover .action_lander {
 		animation: action_lander 1s linear infinite;
 		opacity: 1;
+	}
+	@media only screen and (max-width: 474px) {
+		.projects_container .project:hover .action_popout {
+			transform: scale(1.02);
+		}
 	}
 }
 @keyframes action_lander {
@@ -520,40 +516,97 @@ section.projects {
 	width: 96%;
 	box-sizing: border-box;
 	background: rgba(255, 255, 255);
-	border-radius: 24px;
-	box-shadow: 0 2px 60px #00000030;
+	border-radius: 20px;
 	opacity: 0;
 	pointer-events: none;
 	z-index: 2;
-	padding: 24px 24px;
 
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 }
 
 #project_modal[active] {
-	opacity: 1;
+	/* opacity: 1; */
 	pointer-events: auto;
+	animation: modal_enter 0.2s 0.01s cubic-bezier(0, 0, 0.3, 1.3);
+	animation-fill-mode: both;
+}
+@keyframes modal_enter {
+	0% {
+		opacity: 0;
+		transform: scale(0.8);
+	
+	} 100% {
+		opacity: 1;
+		transform: scale(1)
+	}
+}
+#project_modal .vps div {
+	width: 100%;
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	height: 45px;
+	border-radius: 20px 20px 0 0;
+	border: 1px solid #b7b7b7ff;
+	border-bottom: none;
+}
+#project_modal .vps div:nth-child(2) {
+	border-radius: 0 0 20px 20px;
+	border-bottom: 1px solid #b7b7b7;
+	border-top: 0;
+	bottom: 0;
+	top: unset;
 }
 
 #project_modal h1 {
 	max-width: 100%;
-	font-size: 64px;
-	line-height: 64px;
+	font-size: 56px;
+	line-height: 1em;
 }
 
-#project_modal img,
 #project_modal video {
 	max-width: 100%;
 	border-radius: 4px;
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-#project_modal img {
-	width: 100%;
-	max-height: 80svh;
+#project_modal .main_image {
 	object-fit: contain;
-	margin-bottom: 48px;
+	margin-bottom: 10px;
+	margin: 10px -14px 0px;
+	width: calc(100% + 28px);
+	border-radius: 10px;
+	display: block;
+}
+.video_container {
+	width: 100%;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+	margin-bottom: 10px;
+	margin: 10px -14px 0px;
+	width: calc(100% + 28px);
+	background: #ebebeb;
+}
+
+#project_modal :is(p, h1, h3, h5, .client_list) + :is(.video_container, .main_image) {
+	margin-top: 50px;
+}
+#project_modal :is(p, h2, h3, h5, h6, .client_list, .video_container, .main_image) + :is(h6) {
+	margin-top: 50px;
+}
+#project_modal h1 + h6, #project_modal h2 + h6  {
+	margin-top: 10px;
+}
+#project_modal h2:not(:nth-child(1)) {
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+#project_modal h6 + :is(.video_container, .main_image) {
+	margin-top: 20px;
 }
 
 #project_modal :last-child {
@@ -564,16 +617,7 @@ section.projects {
 	max-height: 80svh;
 }
 
-.video_container {
-	width: 100%;
-	background-color: rgba(0, 0, 0, 0.1);
-	border-radius: 10px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	overflow: hidden;
-	margin-bottom: 48px;
-}
+
 
 #project_modal caption {
 	width: 100%;
@@ -585,11 +629,17 @@ section.projects {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #00000020;
+	background: white;
 	z-index: 1;
 	opacity: 0;
 	pointer-events: none;
 	backdrop-filter: blur(32px);
+	transition: opacity 0.2s, background 0.2s;
+}
+@media (hover:hover) {
+	#modal_close:hover {
+		background: #b7b7b7ff;
+	}
 }
 
 #modal_close[active] {
@@ -603,9 +653,9 @@ body:has(> #project_modal[active]) {
 	overflow: scroll;
 	height: 100%;
 	width: 100%;
+	padding: 40px 24px;
 	box-sizing: border-box;
-	border-radius: 10px;
-
+	border-radius: 20px;
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 }
@@ -615,49 +665,74 @@ body:has(> #project_modal[active]) {
 }
 
 #project_modal .exit_button {
-	all: unset; /* Resets all inherited styles */
-	background-color: rgba(255, 255, 255, 0.15);
-	color: rgb(156, 156, 156);
-	backdrop-filter: blur(15px);
-	mix-blend-mode: difference;
-	border-radius: 10px;
-
-	filter: drop-shadow(0px 0px 10px #000000);
-	filter: drop-shadow(0px 0px 7px #0000009b);
-
-	/* backdrop-filter: brightness(1.35); */
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	all: unset;
+	background: none;
+	color: #ff2900ff;
+	border: 1px solid #ff2900ff;
+	padding: 10px 10px 10px 18px;
 	position: absolute;
-	top: 0;
-	right: 0;
-	width: 50px;
+	box-sizing: border-box;
+	top: 28px;
+	right: -1px;
+	width: 45px;
 	height: 50px;
 	z-index: 1;
-	margin: 24px;
-
-	transition: all 0.2s;
-}
-
-#project_modal .exit_button:hover {
-	/* backdrop-filter: brightness(1.4); */
-	transform: scale(1.1);
+	border-radius: 25px 0 0 25px;
 	cursor: pointer;
+	transition: height 0.2s cubic-bezier(0, 0, 0.3, 1.3);
+	overflow: hidden;
+}
+.exit_button h5:nth-child(1) {
+	line-height: 0.75em;
+	margin-top: -19px;
+	transition: margin 0.2s, opacity 0.2s;
+}
+.exit_button h5:not(:nth-child(2)) {
+	opacity: 0;
+}
+.exit_button h5 {
+	line-height: 0.9em;
+	font-size: 26px;
+	transition: opacity 0.2s;
 }
 
-@media only screen and (min-width: 1000px) {
+@media (hover:hover) {
+	#project_modal .exit_button:hover {
+		height: 120px;
+		cursor: pointer;
+		background: white;
+	}
+	.exit_button:hover h5:nth-child(1) {
+		line-height: 0.75em;
+		margin-top: 0;
+		transition: margin 0.2s;
+	} .exit_button:hover h5:not(:nth-child(2)) {
+		opacity: 1;
+	}
+	#project_modal .exit_button {
+		top: 45px;
+	}
+}
+
+
+
+@media only screen and (min-width: 550px) {
 	#project_modal {
-		max-width: 900px;
-		left: calc(50% - 450px);
-		padding: 36px 36px;
+		max-width: 522px;
+		left: calc(50% - 261px);
 		top: 5svh;
 		height: 90svh;
 	}
-
-	#project_modal .exit_button {
-		margin: 36px;
+	#project_modal div.content {
+		padding: 42px 36px;
+	}
+	.video_container {
+		margin: 10px -26px 0px;
+		width: calc(100% + 52px);
+	}
+	#project_modal .main_image {
+		margin: 10px -26px 0px;
+		width: calc(100% + 52px);
 	}
 }
 

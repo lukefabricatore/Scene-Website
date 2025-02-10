@@ -71,15 +71,10 @@ function createModal(event) {
 	for (item of projectData) {
 		let element = '';
 		if (!item.type) continue;
-		if (item.type === 'h1') {
-			element = document.createElement('h1');
+		if (['h1', 'h2', 'h3', 'h5', 'h6'].includes(item.type)) {
+			element = document.createElement(item.type);
 			element.textContent = item.content;
-		} else if (item.type === 'h2') {
-			element = document.createElement('h2');
-			element.textContent = item.content;
-		} else if (item.type === 'h3') {
-			element = document.createElement('h3');
-			element.textContent = item.content;
+			if (item.color) element.style.color = item.color;
 		} else if (item.type === 'p') {
 			element = document.createElement('p');
 			element.textContent = item.content;
@@ -89,34 +84,31 @@ function createModal(event) {
 		} else if (item.type === 'img') {
 			element = new Image();
 			element.src = `projects/${id}/${item.src}`;
+			element.classList.add('main_image');
 		} else if (item.type === 'video') {
 			element = document.createElement('div');
 			element.classList.add('video_container');
 			let vid = document.createElement('video');
 			vid.src = `projects/${id}/${item.src}`;
-			vid.controls = true;
+			if (item.autoplay) {
+				vid.muted = true;
+				vid.autoplay = true;
+			} else vid.controls = true;
 			vid.loop = true;
+			vid.setAttribute('playsinline', true);
 			element.appendChild(vid);
-		} else if (item.type === 'video') {
-			element = document.createElement('div');
-			element.classList.add('video_container');
-			let vid = document.createElement('video');
-			vid.src = `projects/${id}/${item.src}`;
-			vid.controls = true;
-			vid.loop = true;
-			element.appendChild(vid);
-		} else if (item.type === 'videoauto') {
-			element = document.createElement('div');
-			element.classList.add('video_container');
-			let vid = document.createElement('video');
-			vid.src = `projects/${id}/${item.src}`;
-			vid.autoplay = true;
-			vid.muted = true;
-			vid.loop = true;
-			element.appendChild(vid);
+		} else if (item.type === 'ul') {
+			element = document.createElement('ul');
+			element.classList.add('client_list');
+			for (let li of item.content) {
+				let listEl = document.createElement('li');
+				listEl.innerHTML = li;
+				element.appendChild(listEl);
+			}
 		}
 		containerInner.appendChild(element);
 	}
+	document.documentElement.style.overflow = 'hidden';
 	container.setAttribute('active', 'true');
 	modalCloser.setAttribute('active', 'true');
 	containerInner.scrollTop = 0;
@@ -127,7 +119,9 @@ function closeModal() {
 	const modalCloser = document.querySelector('#modal_close');
 	container.removeAttribute('active');
 	modalCloser.removeAttribute('active');
+	document.documentElement.style.overflow = '';
 	const allVideos = document.querySelectorAll('#project_modal video');
+
 	for (video of allVideos) {
 		video.pause();
 	}
