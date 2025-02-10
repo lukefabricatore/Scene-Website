@@ -7,10 +7,13 @@
 	line-height: 1em;
 	letter-spacing: 0.01em;
 }
+img {
+	pointer-events: none;
+}
 
 ::selection {
 	color: #ff9d00;
-	text-shadow: 0 0 15px #ff9d00b6;
+	/* text-shadow: 0 0 15px #ff9d00b6; */
 	background-color: #ff9d0015;
 }
 
@@ -32,6 +35,39 @@ h1 {
 	line-height: 72px;
 	display: inline-block;
 	margin-bottom: 12px;
+}
+h1.runes {
+	font-family: "Scene Runes";
+	font-size: 115px;
+	line-height: 1em;
+	margin-bottom: 0;
+	font-variation-settings: "wght" 100;
+	animation: logo_animate 13s cubic-bezier(0.30, 0, 0, 1) infinite;
+}
+@keyframes logo_animate {
+	0%, 5% {
+		font-variation-settings: "wght" 200;
+	}
+	 20% {
+		font-variation-settings: "wght" 101;
+		animation-timing-function: step-end;
+	} 25% {
+		font-variation-settings: "wght" 99;
+	} 35% {
+		font-variation-settings: "wght" 0;
+	} 50% {
+		font-variation-settings: "wght" 0;
+	} 60% {
+		font-variation-settings: "wght" 99;
+		animation-timing-function: step-end;
+	} 75% {
+		font-variation-settings: "wght" 101;
+	} 90% {
+		font-variation-settings: "wght" 200;
+	} 100% {
+		font-variation-settings: "wght" 200;
+	}
+	
 }
 
 h2 {
@@ -57,6 +93,7 @@ h5 {
 	font-family: "Analogie";
 	font-size: 20px;
 	letter-spacing: 0em;
+	text-rendering: geometricprecision;
 }
 h6 {
 	font-size: 14px;
@@ -68,11 +105,24 @@ h6 {
 h2 + h6 {
 	margin-top: -2px;
 }
-
+h6 + p {
+	margin-top: 10px;
+}
 p {
 	margin-bottom: 24px;
 	font-size: 16px;
 	line-height: 1.3em
+}
+p.tighter {
+	margin-bottom: 5px;
+}
+p i {
+	font-weight: 700;
+	font-variation-settings: "wdth" 83;
+}
+p strong {
+	font-weight: 700;
+	color: #FF9D00;
 }
 
 .small {
@@ -96,7 +146,7 @@ a {
 
 .hero_video {
 	min-width: 100%;
-	max-width: calc(300% + (3 * 32px));
+	max-width: 910px;
 	width: calc(100vw - 650px);
 	align-self: center;
 	margin-bottom: calc(36px + 36px);
@@ -122,9 +172,12 @@ section {
 
 hr {
 	margin: 8px 0 16px 0;
-	border-width: 1px;
+	border-width: 0.5px;
 	border-style: solid;
 	border-color: #ff9d00;
+}
+hr + h6 {
+	margin-top: 5px;
 }
 
 hr:has(.section) {
@@ -142,6 +195,7 @@ hr:has(.section) {
 
 .headshot_grid {
 	display: grid;
+	margin-top: 16px;
 	grid-template-columns: 1fr 1fr;
 	gap: 8px;
 }
@@ -151,6 +205,7 @@ hr:has(.section) {
 	position: relative; /* Establish a positioning context for the overlay */
 	border-radius: 4px;
 	overflow: hidden;
+	transition: transform 0.2s, border-radius 0.2s;
 }
 
 .card:hover {
@@ -159,6 +214,7 @@ hr:has(.section) {
 
 .card > img {
 	margin: auto 0;
+	transition: filter 0.2s, background 0.2s;
 }
 
 .card:hover > .headshot {
@@ -184,6 +240,7 @@ hr:has(.section) {
 	white-space: nowrap;
 	opacity: 100;
 	filter: drop-shadow(0px 0px 10px #000000);
+	transition: opacity 0.2s;
 }
 
 .personal_statement {
@@ -197,6 +254,7 @@ hr:has(.section) {
 	font-size: 16px; /* Adjust font size */
 	text-align: center; /* Center text alignment */
 	opacity: 0;
+	transition: opacity 0.2s;
 }
 
 .card:hover > .personal_statement {
@@ -251,10 +309,12 @@ video {
 	transform: scale(0.985);
 }
 
+
+/******* UNORDERED LIST *******/
+
 ul {
 	list-style-type: none;
 }
-
 ul > li {
 	padding: 16px 0;
 	border-bottom: 1px solid #00000020;
@@ -262,10 +322,12 @@ ul > li {
 	display: flex;
 	justify-content: space-between;
 }
-
-ul > li:hover {
-	color: #ff9d00;
-	text-shadow: 0 0 15px #ff9d00b6;
+ul.no_just > li {
+	display: block;
+	line-height: 1.3em;
+}
+ul.no_just {
+	margin-bottom: 30px;
 }
 
 .two_column {
@@ -281,9 +343,22 @@ ul > li:hover {
 	cursor: auto;
 }
 
-.two_column > li:hover {
-	color: #ff9d00;
-	text-shadow: 0 0 15px #ff9d00b6;
+ul.client_list li img {
+	height: 24px;
+}
+ul.client_list li {
+	align-items: center;
+	column-gap: 10px;
+	justify-content: left;
+}
+ul.client_list li p {
+	margin: 0;
+	font-variation-settings: "wdth" 75;
+}
+ul.client_list li p i {
+	font-weight: inherit;
+	font-variation-settings: "wdth" 75;
+	opacity: 0.3;
 }
 
 
@@ -292,19 +367,20 @@ ul > li:hover {
 
 section.projects {
 	display: block;
+	margin-top: 72px;
 }
 
-@media (max-width: 498px) {
-	.projects {
-		grid-template-columns: 1fr;
-		max-width: 450px;
+@media only screen and (min-width: 1200px) {
+	section.projects .projects_container {
+		max-width: unset;
+		width: 900px;
+		margin-left: -225px;
 	}
 }
 .projects_container {
 	max-width: 450px;
 	line-height: 0;
 	margin-top: 64px;
-	aspect-ratio: 1 / 1;
 }
 .projects_container .project {
 	width: 225px;
@@ -591,4 +667,8 @@ body:has(> #project_modal[active]) {
 @font-face {
 	font-family: "Analogie";
 	src: url("./assets/analogie.ttf") format("truetype"),
+}
+@font-face {
+	font-family: "Scene Runes";
+	src: url("./assets/scenerunes.ttf") format("truetype"),
 }
