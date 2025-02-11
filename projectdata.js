@@ -53,6 +53,7 @@ const data = {
 			type: 'p',
 			content: 'Scene brought the worlds of Dune and Jurassic World to life in a short-form promo for Max (formerly HBO Max). Partnering with TikTok creator Elliott Walker, we served as the sole VFX studio on the project.',
 		},
+		{ type: 'ul', content: [`<img src="./assets/client_logos/max.svg"> Crafted for Max`, `<img src="./assets/client_logos/infiniteelliott.svg"> In Partnership with <a href='https://tiktok.com/@infiniteelliott' target="_blank" >@infiniteelliott</a>`, `April 2024`] },
 		{ type: 'video', src: 'main.mp4' },
 		{ type: 'video', autoplay: true, src: 'JurassicWorldThumper.mp4' },
 	],
@@ -72,21 +73,25 @@ const data = {
 
 	reimagineLifeFoundation: [
 		{ type: 'h1', content: 'Reimagine Life Foundation' },
+		{ type: 'h6', content: 'SCENE SYNOPSIS' },
 		{
 			type: 'p',
-			content: 'Scene had the opportunity to work with the Reimagine Life Foundation to create a new logo and brand identity. The foundation is a non-profit organization that helps people who have had life-altering disabilities.',
+			content: 'Scene had the opportunity to work with the Reimagine Life Foundation to consult on strategy and create a new logo and brand identity system. The non-profit supports individuals navigating life-altering disabilities. Our intentional solution depicts movement inward towards the supportive community they help foster and champion.',
 		},
+		{ type: 'ul', content: [`<img src="./assets/client_logos/reimaginelife.svg"> Crafted for Reimagine Life Foundation`, `September 2024`] },
 		{ type: 'img', src: 'ReimagineLife_BrandGuidelines4_1.webp' },
 		{ type: 'img', src: 'ReimagineLife_BrandGuidelines_3.webp' },
 		{ type: 'img', src: 'ReimagineLife_BrandGuidelines_2.webp' },
 	],
 
 	nothing3DBrand: [
-		{ type: 'h1', content: 'Nothing Rebrand' },
+		{ type: 'h1', content: 'Nothing Story' },
+		{ type: 'h6', content: 'SCENE SYNOPSIS' },
 		{
 			type: 'p',
-			content: 'Scene member Luke created a Brand Story video for Nothing, a tech company rooted in going against the grain. Hypothetical work.',
+			content: 'Scene developed a brand video for Nothing, the tech company built on defying convention. After modeling a Nothing Phone (2) from scratch, we wanted to celebrate what made the device uniquely beautiful. With custom script, music, and sound design, our video reflects the brand’s rebellious spirit.',
 		},
+		{ type: 'ul', content: [`Internal Venture`, `December 2023`] },
 		{ type: 'video', src: 'brandvideo.mp4' },
 		{ type: 'img', src: 'nothing2.webp' },
 		{ type: 'img', src: 'nothing3.webp' },
@@ -95,11 +100,13 @@ const data = {
 	],
 
 	mechKeeb: [
-		{ type: 'h1', content: 'Mechanical Keyboard Story Brand' },
+		{ type: 'h1', content: 'Mechanical Keyboard Community' },
+		{ type: 'h6', content: 'SCENE SYNOPSIS' },
 		{
 			type: 'p',
-			content: "Scene member Julian created a 3D brand story for a the mechanical keyboard online community. The video highlights the community's passion for mechanical keyboards and the culture that surrounds it.",
+			content: 'Scene created a 3D intro and hype video for the mechanical keyboard online community, celebrating the culture and passion behind the hobby. Led by our in-house keyboard enthusiast, Julian, this project brings the community’s unique energy to life.',
 		},
+		{ type: 'ul', content: [`Internal Venture`, `December 2023`] },
 		{ type: 'video', src: 'keeb_final.mp4' },
 		{ type: 'img', src: '6.webp' },
 		{ type: 'img', src: '7.webp' },
