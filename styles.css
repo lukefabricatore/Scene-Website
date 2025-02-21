@@ -402,6 +402,9 @@ section.projects {
 	padding: 13px 16px 13px;
 	box-sizing: border-box;
 }
+.project .text_slider .text_slider_mover h5 {
+	color: black
+}
 .projects_container .project h5:nth-child(2) {
 	font-family: "Instrument Sans";
 	font-weight: 600;
@@ -429,6 +432,7 @@ section.projects {
 	width: 100%;
 	transition: transform 0.2s;
 }
+
 .projects_container .project img {
 	width: 100%;
 	pointer-events: none;
