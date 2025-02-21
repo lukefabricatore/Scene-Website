@@ -94,6 +94,10 @@ function createModal(event) {
 				vid.muted = true;
 				vid.autoplay = true;
 			} else vid.controls = true;
+			if (item.aspect) {
+				vid.style.aspectRatio = item.aspect;
+				element.style.aspectRatio = item.aspect;
+			}
 			vid.loop = true;
 			vid.setAttribute('playsinline', true);
 			element.appendChild(vid);

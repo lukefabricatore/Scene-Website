@@ -567,6 +567,7 @@ section.projects {
 #project_modal video {
 	max-width: 100%;
 	border-radius: 4px;
+	height: 100%;
 }
 
 #project_modal .main_image {
@@ -588,6 +589,7 @@ section.projects {
 	margin: 10px -14px 0px;
 	width: calc(100% + 28px);
 	background: #131313;
+	max-height: 80svh;
 }
 /* DARK MODE */
 #project_modal {
@@ -626,9 +628,6 @@ section.projects {
 	margin-bottom: 0;
 }
 
-#project_modal video {
-	max-height: 80svh;
-}
 
 
 
