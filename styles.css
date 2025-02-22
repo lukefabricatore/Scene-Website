@@ -740,7 +740,7 @@ body:has(> #project_modal[active]) {
 		max-width: 522px;
 		left: calc(50% - 261px);
 		top: 5svh;
-		height: 90svh;
+		height: 90dvh;
 	}
 	#project_modal div.content {
 		padding: 42px 36px;
