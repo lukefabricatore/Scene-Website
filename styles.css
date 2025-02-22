@@ -572,6 +572,8 @@ section.projects {
 	max-width: 100%;
 	border-radius: 4px;
 	height: 100%;
+	position: absolute;
+	top: 0;
 }
 
 #project_modal .main_image {
@@ -594,6 +596,7 @@ section.projects {
 	width: calc(100% + 28px);
 	background: #131313;
 	max-height: 80svh;
+	position: relative;
 }
 /* DARK MODE */
 #project_modal {
