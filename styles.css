@@ -142,13 +142,18 @@ p strong {
 	font-weight: 700;
 	color: #FF9D00;
 }
+h5 b {
+	all: unset; 
+	color: #FF9D00;
+}
 
 .small {
 	font-size: 14px;
+	line-height: 1.2em;
 }
 
 .desc {
-	opacity: 50%;
+	/* opacity: 50%; */
 }
 
 a {
@@ -655,11 +660,6 @@ section.projects {
 	pointer-events: none;
 	backdrop-filter: blur(32px);
 	transition: opacity 0.2s, background 0.2s;
-}
-@media (hover:hover) {
-	#modal_close:hover {
-		background: #414141ff;
-	}
 }
 
 #modal_close[active] {
