@@ -520,7 +520,7 @@ section.projects {
 #project_modal {
 	position: fixed;
 	top: 2svh;
-	height: 96svh;
+	height: 96dvh;
 	left: 2%;
 	width: 96%;
 	box-sizing: border-box;
