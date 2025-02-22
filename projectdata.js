@@ -42,7 +42,7 @@ const data = {
 			type: 'p',
 			content: 'Spacecraft modeled, textured, and rigged custom for the aethesthic of Drifting',
 		},
-		{ type: 'video', src: 'ep2_intro.mp4', aspect: '9 / 16' },
+		{ type: 'video', src: 'ep2_introshot.mp4', aspect: '9 / 16' },
 		{ type: 'video', src: 'ep2_final.mp4', aspect: '9 / 16' },
 		{ type: 'img', src: 'space_station.webp' },
 	],

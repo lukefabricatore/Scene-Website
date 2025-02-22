@@ -526,6 +526,7 @@ section.projects {
 	background: black;
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+	transition: height 0.3s;
 }
 
 #project_modal[active] {
