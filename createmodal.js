@@ -89,7 +89,8 @@ function createModal(event) {
 			element = document.createElement('div');
 			element.classList.add('video_container');
 			let vid = document.createElement('video');
-			vid.src = `projects/${id}/${item.src}`;
+			vid.setAttribute('preload', 'metadata');
+			vid.src = `projects/${id}/${item.src}#t=0.1`;
 			if (item.autoplay) {
 				vid.muted = true;
 				vid.autoplay = true;
