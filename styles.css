@@ -142,13 +142,18 @@ p strong {
 	font-weight: 700;
 	color: #FF9D00;
 }
+h5 b {
+	all: unset; 
+	color: #FF9D00;
+}
 
 .small {
 	font-size: 14px;
+	line-height: 1.2em;
 }
 
 .desc {
-	opacity: 50%;
+	/* opacity: 50%; */
 }
 
 a {
@@ -402,6 +407,9 @@ section.projects {
 	padding: 13px 16px 13px;
 	box-sizing: border-box;
 }
+.project .text_slider .text_slider_mover h5 {
+	color: black
+}
 .projects_container .project h5:nth-child(2) {
 	font-family: "Instrument Sans";
 	font-weight: 600;
@@ -429,6 +437,7 @@ section.projects {
 	width: 100%;
 	transition: transform 0.2s;
 }
+
 .projects_container .project img {
 	width: 100%;
 	pointer-events: none;
@@ -511,7 +520,7 @@ section.projects {
 #project_modal {
 	position: fixed;
 	top: 2svh;
-	height: 96svh;
+	height: 96dvh;
 	left: 2%;
 	width: 96%;
 	box-sizing: border-box;
@@ -522,6 +531,7 @@ section.projects {
 	background: black;
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+	transition: height 0.3s;
 }
 
 #project_modal[active] {
@@ -567,6 +577,9 @@ section.projects {
 #project_modal video {
 	max-width: 100%;
 	border-radius: 4px;
+	height: 100%;
+	position: absolute;
+	top: 0;
 }
 
 #project_modal .main_image {
@@ -588,6 +601,8 @@ section.projects {
 	margin: 10px -14px 0px;
 	width: calc(100% + 28px);
 	background: #131313;
+	max-height: 80svh;
+	position: relative;
 }
 /* DARK MODE */
 #project_modal {
@@ -626,9 +641,6 @@ section.projects {
 	margin-bottom: 0;
 }
 
-#project_modal video {
-	max-height: 80svh;
-}
 
 
 
@@ -648,11 +660,6 @@ section.projects {
 	pointer-events: none;
 	backdrop-filter: blur(32px);
 	transition: opacity 0.2s, background 0.2s;
-}
-@media (hover:hover) {
-	#modal_close:hover {
-		background: #414141ff;
-	}
 }
 
 #modal_close[active] {
@@ -734,7 +741,7 @@ body:has(> #project_modal[active]) {
 		max-width: 522px;
 		left: calc(50% - 261px);
 		top: 5svh;
-		height: 90svh;
+		height: 90dvh;
 	}
 	#project_modal div.content {
 		padding: 42px 36px;
