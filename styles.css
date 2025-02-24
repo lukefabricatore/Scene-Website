@@ -60,11 +60,16 @@ h1.runes {
 	line-height: 1em;
 	margin-bottom: 0;
 	font-variation-settings: "wght" 100;
-	animation: logo_animate 13s cubic-bezier(0.30, 0, 0, 1) infinite;
+	animation: logo_animate 10s cubic-bezier(0.30, 0, 0, 1) infinite;
 }
 @keyframes logo_animate {
 	0%, 5% {
 		font-variation-settings: "wght" 200;
+		-webkit-animation-timing-function: cubic-bezier(1,0,1,1);
+	} 
+	9% {
+		-webkit-animation-timing-function: cubic-bezier(0,0,0,1);
+		font-variation-settings: "wght" 170;
 	}
 	 20% {
 		font-variation-settings: "wght" 101;
@@ -75,13 +80,20 @@ h1.runes {
 		font-variation-settings: "wght" 0;
 	} 50% {
 		font-variation-settings: "wght" 0;
-	} 60% {
+	}
+	 60% {
 		font-variation-settings: "wght" 99;
 		animation-timing-function: step-end;
 	} 75% {
 		font-variation-settings: "wght" 101;
-	} 90% {
+		-webkit-animation-timing-function: cubic-bezier(1,0,1,1);
+	} 82% {
+		font-variation-settings: "wght" 170;
+		-webkit-animation-timing-function: cubic-bezier(0,0,0,1);
+	}
+	85% {
 		font-variation-settings: "wght" 200;
+		
 	} 100% {
 		font-variation-settings: "wght" 200;
 	}
