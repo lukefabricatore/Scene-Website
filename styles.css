@@ -415,6 +415,28 @@ ul.no_just {
 	cursor: auto;
 }
 
+#brand_site_tag ul.client_list {
+	background: #FF9D0020;
+	margin: -36px 0 24px;
+	border-radius: 4px;
+	transition: transform 0.2s cubic-bezier(0.17, 0.67, 0.29, 2.71);
+}
+#brand_site_tag {
+	text-decoration: none;
+}
+#brand_site_tag ul.client_list li {
+	border-bottom-color: transparent;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	padding: 16px;
+	
+} 
+@media (hover:hover) {
+	#brand_site_tag ul.client_list:hover {
+		transform: scale(1.02);
+	}
+}
+
 ul.client_list li img {
 	height: 24px;
 }
@@ -765,6 +787,11 @@ body:has(> #project_modal[active]) {
 	border-radius: 20px;
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+}
+
+#project_modal div.content h2 + p {
+	color: #6e6e6e;
+	margin-top: -7px;
 }
 
 #project_modal div.content::-webkit-scrollbar {

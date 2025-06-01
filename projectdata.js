@@ -1,9 +1,9 @@
 const projects = [
 	{ title: 'Drifting', id: 'drifting' },
 	{ title: 'LG Wonderbox', id: 'lg' },
-	{ title: 'Metro Times', id: 'paxahauMetroTimes' },
+	{ title: 'Movement', id: 'paxahauMetroTimes' },
 	{ title: 'Doritos', id: 'doritos' },
-	{ title: 'Max Promo', id: 'max' },
+	{ title: 'HBO Max', id: 'max' },
 	{ title: 'Reimagine Life', id: 'reimagineLifeFoundation' },
 	{ title: 'Nothing', id: 'nothing3DBrand' },
 	{ title: 'Keyboards', id: 'mechKeeb' },
@@ -48,25 +48,71 @@ const data = {
 	],
 
 	max: [
-		{ type: 'h1', content: 'Max Promo' },
+		{ type: 'h1', content: 'HBO Max Promo' },
 		{ type: 'h6', content: 'SCENE SYNOPSIS' },
 		{
 			type: 'p',
-			content: 'Scene brought the worlds of Dune and Jurassic World to life in a short-form promo for Max (formerly HBO Max). Partnering with TikTok creator Elliott Walker, we served as the sole VFX studio on the project.',
+			content: 'Scene brought the worlds of Dune and Jurassic World to life in a short-form promo for HBO Max (formerly Max). Partnering with TikTok creator Elliott Walker, we served as the sole VFX studio on the project.',
 		},
-		{ type: 'ul', content: [`<img src="./assets/client_logos/max.svg"> Crafted for Max`, `<img src="./assets/client_logos/infiniteelliott.svg"> In Partnership with <a href='https://tiktok.com/@infiniteelliott' target="_blank" >@infiniteelliott</a>`, `April 2024`] },
+		{ type: 'ul', content: [`<img src="./assets/client_logos/max.svg"> Crafted for HBO Max`, `<img src="./assets/client_logos/infiniteelliott.svg"> In Partnership with <a href='https://tiktok.com/@infiniteelliott' target="_blank" >@infiniteelliott</a>`, `April 2024`] },
 		{ type: 'video', src: 'main.mp4', aspect: '9 / 16' },
 		{ type: 'video', autoplay: true, src: 'thumper.mp4', aspect: '9 / 16' },
 	],
 
 	paxahauMetroTimes: [
-		{ type: 'h1', content: 'Movement Festival Metro Times Cover' },
+		{ type: 'h1', content: 'Movement Festival' },
 		{ type: 'h6', content: 'SCENE SYNOPSIS' },
 		{
 			type: 'p',
-			content: 'Scene teamed up with Paxahau to create a promotional visual for Movement, Detroit’s iconic techno and electronic music festival. Our abstract reimagining of the Dodge Fountain was published in the May 22, 2024 issue of the Detroit Metro Times.',
+			content: 'Scene partnered with Paxahau to create promo visuals for Movement, Detroit’s iconic electronic music festival. Drawing from close research, we built four 3D worlds capturing the Festival’s spirit: Technogaianism, Surreal Futurism, Frequency Equilibrium, and Alien Frontiers. Our abstract Dodge Fountain reimagining also appeared in the May 22, 2024 issue of Detroit Metro Times.',
 		},
-		{ type: 'ul', content: [`<img src="./assets/client_logos/metrotimes.svg"> Crafted for <a href='https://www.metrotimes.com/detroit/IssueArchives?issue=36331645' target="_blank" >Detroit Metro Times</a>`, `<img src="./assets/client_logos/paxahau.svg"> In Partnership with Paxahau`, `May 2024`] },
+		{ type: 'ul', content: [`<img src="./assets/client_logos/paxahau.svg"> Crafted for Paxahau`, `<img src="./assets/client_logos/metrotimes.svg"> In Partnership with <a href='https://www.metrotimes.com/detroit/IssueArchives?issue=36331645' target="_blank" >Metro Times</a>`, `May 2024`] },
+		{
+			type: 'h2',
+			content: 'Surreal Futurism',
+		},
+		{
+			type: 'p',
+			content: 'The threshold between us and another dimension',
+		},
+		{ type: 'img', src: '/worlds/surreal_1.webp' },
+		{ type: 'img', src: '/worlds/surreal_2.webp' },
+		{
+			type: 'h2',
+			content: 'Technogaianism',
+		},
+		{
+			type: 'p',
+			content: 'Technology and nature growing together',
+		},
+		{ type: 'img', src: '/worlds/techno_1.webp' },
+		{ type: 'img', src: '/worlds/techno_2.webp' },
+		{
+			type: 'h2',
+			content: 'Frequency Equillibrium',
+		},
+		{
+			type: 'p',
+			content: 'Light and dark oriented as sacred patterns',
+		},
+		{ type: 'img', src: '/worlds/frequency.webp' },
+		{
+			type: 'h2',
+			content: 'Alien Frontiers',
+		},
+		{
+			type: 'p',
+			content: 'The un-reality of illustrative lines in an alien world',
+		},
+		{ type: 'img', src: '/worlds/alien.webp' },
+		{
+			type: 'h2',
+			content: 'Metro Times Cover',
+		},
+		{
+			type: 'p',
+			content: "An abstract depiction of Detroit's Dodge Fountain",
+		},
 		{ type: 'video', autoplay: true, src: 'movment_metrotimes.mp4', aspect: '864 / 1080' },
 		{ type: 'img', src: 'wireframe.webp' },
 		{ type: 'img', src: 'cover.webp' },
